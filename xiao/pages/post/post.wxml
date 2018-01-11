@@ -1,0 +1,13 @@
+<view>
+  <swiper indicator-dots='true' autoplay="true" interval="2000">
+    <swiper-item>
+      <image src='/images/post/xiaolong.jpg'></image>
+    </swiper-item>
+    <swiper-item>
+      <image src='/images/post/vr.png'></image>
+    </swiper-item>
+    <swiper-item>
+      <image src='/images/post/cat.png'></image>
+    </swiper-item>
+  </swiper>
+</view>

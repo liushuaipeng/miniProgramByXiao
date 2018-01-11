@@ -1,0 +1,9 @@
+{
+  "pages": [
+    "pages/post/post",
+    "pages/home/home"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#b3d4db"
+  }
+}
