@@ -1,7 +1,7 @@
 <view class='container'>
   <image class='user_avater' src='/images/avatar.jpg'></image>
   <text class='user_name'><text style='color:red;'>hello</text>，XIAO</text>
-  <view class='moto_wrap'>
+  <view class='moto_wrap' bindtap="onTap">
     <text class='moto'>开启</text>
   </view>
 </view>

@@ -1,3 +1,4 @@
+<import src="/pages/post/post_item/post_item_template.wxml" />
 <view>
   <swiper indicator-dots='true' autoplay="true" interval="2000">
     <swiper-item>
@@ -10,49 +11,10 @@
       <image src='/images/post/cat.png'></image>
     </swiper-item>
   </swiper>
-  <view class='post_wrap'>
-    <view class='post_avatar_date'>
-      <image class='post_avatar' src='/images/avatar/1.png'></image>
-      <text class='post_date'>Nov 25 2018</text>
+  <block wx:for="{{postList}}" wx:key="{{postId}}">
+    <view catchtap="onPostTap" data-postid="{{item.postId}}">
+      <template is="postItem" data="{{...item}}"></template>
     </view>
-    <text class='post_title'>正是虾肥蟹壮士</text>
-    <image class='post_image' src='/images/post/crab.png'></image>
-    <text class='post_dec'>到青岛游玩，尤其是秋季，倘若只是淌淌海水看看建筑，那小编不得不说一句：您真是low爆啦！不下海，不和当地的渔民们一起捕一次鱼，网一次虾，您怎么好意思说来过青岛！</text>
-    <view class='post_like'>
-      <image class='post_like_image' src='/images/icon/chat.png'></image>
-      <text class='post_like_font'>92</text>
-      <image class='post_like_image' src='/images/icon/view.png'></image>
-      <text class='post_like_font'>65</text>
-    </view>
-  </view>
-  <view class='post_wrap'>
-    <view class='post_avatar_date'>
-      <image class='post_avatar' src='/images/avatar/1.png'></image>
-      <text class='post_date'>Nov 25 2018</text>
-    </view>
-    <text class='post_title'>正是虾肥蟹壮士</text>
-    <image class='post_image' src='/images/post/crab.png'></image>
-    <text class='post_dec'>到青岛游玩，尤其是秋季，倘若只是淌淌海水看看建筑，那小编不得不说一句：您真是low爆啦！不下海，不和当地的渔民们一起捕一次鱼，网一次虾，您怎么好意思说来过青岛！</text>
-    <view class='post_like'>
-      <image class='post_like_image' src='/images/icon/chat.png'></image>
-      <text class='post_like_font'>92</text>
-      <image class='post_like_image' src='/images/icon/view.png'></image>
-      <text class='post_like_font'>65</text>
-    </view>
-  </view>
-  <view class='post_wrap'>
-    <view class='post_avatar_date'>
-      <image class='post_avatar' src='/images/avatar/1.png'></image>
-      <text class='post_date'>Nov 25 2018</text>
-    </view>
-    <text class='post_title'>正是虾肥蟹壮士</text>
-    <image class='post_image' src='/images/post/crab.png'></image>
-    <text class='post_dec'>到青岛游玩，尤其是秋季，倘若只是淌淌海水看看建筑，那小编不得不说一句：您真是low爆啦！不下海，不和当地的渔民们一起捕一次鱼，网一次虾，您怎么好意思说来过青岛！</text>
-    <view class='post_like'>
-      <image class='post_like_image' src='/images/icon/chat.png'></image>
-      <text class='post_like_font'>92</text>
-      <image class='post_like_image' src='/images/icon/view.png'></image>
-      <text class='post_like_font'>65</text>
-    </view>
-  </view>
+
+  </block>
 </view>

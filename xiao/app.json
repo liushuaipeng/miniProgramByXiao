@@ -1,9 +1,11 @@
 {
   "pages": [
+    
+    "pages/home/home",
     "pages/post/post",
-    "pages/home/home"
+    "pages/post/post_detail/post_detail"
   ],
   "window": {
-    "navigationBarBackgroundColor": "#b3d4db"
+    "navigationBarBackgroundColor": "#405f80"
   }
 }
