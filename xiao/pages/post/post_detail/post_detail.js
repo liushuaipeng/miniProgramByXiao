@@ -48,7 +48,7 @@ Page({
         title: collected ? '收藏成功' : '取消成功',
         duration: 1000
       })
-    }, 2000)
+    }, 1000)
   },
   // 点击分享
   onShareTap: function (event) {
@@ -71,16 +71,23 @@ Page({
   // 音乐播放
   onMusicTap: function (event) {
     var isPlayingmucis = this.data.isPlayingmucis;
+    var postId = this.data.postId;
+    var postData = this.data.postData;
+    console.log(postData)
     if (isPlayingmucis) {
       wx.pauseBackgroundAudio();
-      this.data.isPlayingmucis = false;
+      this.setData({
+        isPlayingmucis: false
+      })
     } else {
       wx.playBackgroundAudio({
-        dataUrl: 'http://ws.stream.qqmusic.qq.com/C100003507bR0gDKBm.m4a?fromtag=38',
-        title: '夜夜夜夜-齐秦',
-        coverImgUrl: 'http://y.gtimg.cn/music/photo_new/T002R150x150M000001TEc6V0kjpVC.jpg?max_age=2592000'
+        dataUrl: postData.music.url,
+        title: postData.music.title,
+        coverImgUrl: postData.music.coverImg
       })
-      this.data.isPlayingmucis = true;
+      this.setData({
+        isPlayingmucis: true
+      })
     }
 
   },

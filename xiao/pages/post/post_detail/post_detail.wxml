@@ -1,6 +1,6 @@
 <view class='wrapper'>
   <image class='head_image' src='{{postData.headImgSrc}}'></image>
-  <image catchtap='onMusicTap' class='audio' src='/images/music/music-start.png'></image>
+  <image catchtap='onMusicTap' class='audio' src='/images/music/music-{{isPlayingmucis?"stop":"start"}}.png'></image>
   <view class='author_date'>
     <image class='avatar' src='{{postData.avatar}}'></image>
     <text class='author'>{{postData.author}}</text>
