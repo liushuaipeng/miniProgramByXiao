@@ -1,0 +1,13 @@
+<import src="./movie_list/movie_list_template.wxml" />
+
+<view class='wrapper'>
+  <view class='movies_template'>
+    <template is="movieListTemplate" data="{{...inTheatersList}}" />
+  </view>
+  <view class='movies_template'>
+    <template is="movieListTemplate" data="{{...comingSoonList}}" />
+  </view>
+  <view class='movies_template'>
+    <template is="movieListTemplate" data="{{...top250List}}" />
+  </view>
+</view>

@@ -1,0 +1,10 @@
+/* pages/movies/movies.wxss */
+@import "movie_list/movie_list_template.wxss";
+
+.wrapper {
+  background-color: #f2f2f2;
+}
+
+.movies_template {
+  margin-bottom: 30rpx;
+}

@@ -1,9 +1,9 @@
 var post_data = require('../../../data/post_data.js');
-
+var app = getApp();
 Page({
 
   /**
-   * 页面的初始数据
+   * 页面的初始数据  
    */
   data: {
     isPlayingmucis: false
@@ -24,6 +24,32 @@ Page({
       postData: postData,
       collected: collected || false
     });
+    this.setAudioState();
+
+  },
+
+  setAudioState: function () {
+    // 监听音乐总控开关
+    var _self = this;
+    wx.onBackgroundAudioPlay(function () {
+      _self.setData({
+        isPlayingmucis: true
+      });
+      app.globalData.g_isplayingmusic = true;
+      app.globalData.g_currentMusicPostId = _self.data.postId;
+    });
+    wx.onBackgroundAudioPause(function () {
+      _self.setData({
+        isPlayingmucis: false
+      })
+      app.globalData.g_currentMusicPostId = null;
+    });
+
+    if (app.globalData.g_isplayingmusic && app.globalData.g_currentMusicPostId == _self.data.postId) {
+      _self.setData({
+        isPlayingmucis: true
+      })
+    }
   },
   // 点击收藏
   onCollectionTap: function (event) {
@@ -73,7 +99,6 @@ Page({
     var isPlayingmucis = this.data.isPlayingmucis;
     var postId = this.data.postId;
     var postData = this.data.postData;
-    console.log(postData)
     if (isPlayingmucis) {
       wx.pauseBackgroundAudio();
       this.setData({

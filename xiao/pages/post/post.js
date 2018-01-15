@@ -4,12 +4,22 @@ Page({
    * 页面的初始数据
    */
   data: {
-    
+
   },
-  onPostTap:function(event){
-    console.log(event.currentTarget.dataset.postid);
+  onPostTap: function (event) {
     var postid = event.currentTarget.dataset.postid;
-    console.log('onPostTap');
+    wx.navigateTo({
+      url: 'post_detail/post_detail?id=' + postid,
+    })
+  },
+  onSwiperItemTap: function (event) {
+    var postid = event.currentTarget.dataset.postid;
+    wx.navigateTo({
+      url: 'post_detail/post_detail?id=' + postid,
+    })
+  },
+  onSwiperTap: function (event) {
+    var postid = event.target.dataset.postid;
     wx.navigateTo({
       url: 'post_detail/post_detail?id=' + postid,
     })
