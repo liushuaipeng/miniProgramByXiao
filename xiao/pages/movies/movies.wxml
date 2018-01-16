@@ -1,5 +1,8 @@
 <import src="./movie_list/movie_list_template.wxml" />
-
+<view class='search'>
+  <icon type='search' class='search_img' size='13' color='#405f80'></icon>
+  <input type='text' placeholder='血战钢锯岭' placeholder-class='placeholder' bindfocus='onBindFocus' bindchange></input>
+</view>
 <view class='wrapper'>
   <view class='movies_template'>
     <template is="movieListTemplate" data="{{...inTheatersList}}" />

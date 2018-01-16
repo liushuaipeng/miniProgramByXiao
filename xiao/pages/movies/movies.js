@@ -31,7 +31,7 @@ Page({
       url: url,
       method: "GET",
       header: {
-        "Content-Type": "application/xml"
+        "Content-Type": "json"
       },
       success: function (res) {
         _self.processDoubanData(res.data, key);
@@ -67,7 +67,16 @@ Page({
     }
     this.setData(handData);
   },
-
+  // 更多跳转
+  onMoreTap: function (event) {
+    var category = event.currentTarget.dataset.category
+    wx.navigateTo({
+      url: 'more_movie/more_movie?category=' + category,
+    })
+  },
+  onBindFocus: function (event) {
+    console.log('-------');
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

@@ -3,7 +3,8 @@
 .movie_wrap {
   display: flex;
   flex-direction: column;
-  padding: 0 22rpx;
+  align-items: center;
+  padding: 0 25rpx;
 }
 
 .movie_img {

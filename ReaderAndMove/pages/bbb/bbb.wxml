@@ -1,0 +1,2 @@
+<!--pages/bbb/bbb.wxml-->
+<text catchtap='onTap'>pages/bbb/bbb.wxml</text>

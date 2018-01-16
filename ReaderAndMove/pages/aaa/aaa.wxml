@@ -1,0 +1,6 @@
+<!--pages/aaa/aaa.wxml-->
+<view catchtap='onTap'>
+  <text>pages/aaa/aaa.wxml</text>
+  
+</view>
+<view catchtap="onTap1">前往CCC</view>
