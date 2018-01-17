@@ -1,0 +1,66 @@
+/* pages/movies/movie_search/movie_search.wxss */
+@import '../movie_grid/movie_grid_template.wxss';
+
+.search {
+  margin-bottom: 20rpx;
+  background-color: #f2f2f2;
+  height: 80rpx;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.search input {
+  height: 100%;
+  flex: 1;
+  font-size: 28rpx;
+  padding-left: 10rpx;
+}
+
+.search_img {
+  flex: 0 0 46rpx;
+  margin-left: 20rpx;
+}
+
+.placeholder {
+  font-size: 14px;
+  color: #d1d1d1;
+}
+
+.search_history_title {
+  padding: 25rpx 30rpx;
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: #000;
+  border-top: 1px solid #e4e7e9;
+  border-bottom: 1px solid #e4e7e9;
+}
+.search_history_wrap {
+  display: flex;
+  flex-direction: column;
+  padding: 0 30rpx;
+}
+.search_history_wrap text {
+  font-size: 12px;
+  padding: 30rpx 0;
+  border-bottom: 1px solid #d9d9d9;
+}
+.clearHistory {
+  width: 500rpx;
+  height: 100rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5rpx;
+  text-align: center;
+  font-size: 13px;
+  border: 1px solid #232326;
+  margin: 100rpx auto;
+  color: #6b6b6b;
+}
+.clearHistory icon {
+  margin-right: 10rpx;
+}
+

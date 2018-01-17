@@ -7,7 +7,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    placeholderData: ''
   },
 
   /**
@@ -61,6 +61,12 @@ Page({
       comingSoonList: '即将上映',
       top250List: 'Top250'
     }
+    if (key == 'inTheatersList') {
+      var index = Math.floor(Math.random() * movies.length);
+      this.setData({
+        placeholderData: movies[index].title
+      });
+    }
     handData[key] = {
       movies: movies,
       title: referenceObj[key]
@@ -75,7 +81,10 @@ Page({
     })
   },
   onBindFocus: function (event) {
-    console.log('-------');
+    var _self = this;
+    wx.navigateTo({
+      url: 'movie_search/movie_search?placeholderData=' + _self.data.placeholderData,
+    })
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
