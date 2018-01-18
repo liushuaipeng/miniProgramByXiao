@@ -8,6 +8,7 @@ Page({
    */
   data: {
     autoFocus: true,
+    searchHistoryValue: '',
     movies: [],
     historyShow: true,
     historyData: []
@@ -28,11 +29,39 @@ Page({
   },
   // 点击确定搜索
   onBindConfirm: function (event) {
-
     var text = event.detail.value;
     if (!text) {
       text = this.data.placeholderData
     };
+    this.historySearchHandle(text);
+  },
+  // 点击搜索历史
+  onHistoryItem: function (event) {
+    var text = event.currentTarget.dataset.text;
+    this.setData({
+      searchHistoryValue: text
+    })
+    this.historySearchHandle(text);
+  },
+  // 清空搜索历史
+  onClearHistory: function () {
+    var _self = this;
+    wx.showModal({
+      title: '确定清除历史搜索吗？',
+      content: '',
+      success: function (res) {
+        if (res.confirm) {
+          _self.setData({
+            historyData: []
+          });
+          wx.setStorageSync('movieHistorySearchData', []);
+        }
+
+      }
+    })
+  },
+  // 搜索历史处理
+  historySearchHandle: function (text) {
     var url = app.globalData.douBanBase + "/v2/movie/search?count=21&q=" + text;
     wx.showNavigationBarLoading();
     var historyData = this.data.historyData;
@@ -59,26 +88,6 @@ Page({
       historyData
     })
     this.getMovieListData(url);
-  },
-  onHistoryItem: function (event) {
-    console.log(event.currentTarget.dataset.text);
-  },
-  // 清空搜索历史
-  onClearHistory: function () {
-    var _self = this;
-    wx.showModal({
-      title: '确定清除历史搜索吗？',
-      content: '',
-      success: function (res) {
-        if (res.confirm) {
-          _self.setData({
-            historyData: []
-          });
-          wx.setStorageSync('movieHistorySearchData', []);
-        }
-
-      }
-    })
   },
   // 请求函数
   getMovieListData: function (url, key) {

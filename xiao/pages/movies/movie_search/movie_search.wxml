@@ -3,7 +3,7 @@
 
 <view class='search'>
   <icon type='search' class='search_img' size='13' color='#405f80'></icon>
-  <input type='text' placeholder='{{placeholderData}}' placeholder-class='placeholder' bindfocus='onBindFocus' bindconfirm="onBindConfirm" focus="{{autoFocus}}"></input>
+  <input type='text' placeholder='{{placeholderData}}' placeholder-class='placeholder' bindfocus='onBindFocus' bindconfirm="onBindConfirm" focus="{{autoFocus}}" value='{{searchHistoryValue}}'></input>
 </view>
 <view class='search_history' wx:if="{{historyShow}}">
   <text class='search_history_title'>历史搜索</text>
