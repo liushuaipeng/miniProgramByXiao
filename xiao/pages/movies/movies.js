@@ -31,7 +31,7 @@ Page({
       url: url,
       method: "GET",
       header: {
-        "Content-Type": "json"
+        "Content-Type": "application/json"
       },
       success: function (res) {
         _self.processDoubanData(res.data, key);
@@ -45,7 +45,7 @@ Page({
       var title = item.title;
       if (title.length > 5) {
         title = title.substr(0, 6);
-      }
+      };
       var temp = {
         title: title,
         average: item.rating.average,
@@ -84,6 +84,13 @@ Page({
     var _self = this;
     wx.navigateTo({
       url: 'movie_search/movie_search?placeholderData=' + _self.data.placeholderData,
+    })
+  },
+  // 详情跳转
+  onMovieTap: function (event) {
+    var _self = this;
+    wx.navigateTo({
+      url: 'movie_search/movie_search?placeholderData=' + _self.data.movieid,
     })
   },
   /**
