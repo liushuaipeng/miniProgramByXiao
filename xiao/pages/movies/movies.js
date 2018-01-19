@@ -88,9 +88,9 @@ Page({
   },
   // 详情跳转
   onMovieTap: function (event) {
-    var _self = this;
+    console.log(event.currentTarget.dataset.movieid)
     wx.navigateTo({
-      url: 'movie_search/movie_search?placeholderData=' + _self.data.movieid,
+      url: 'movie_detail/movie_detail?placeholderData=' + event.currentTarget.dataset.movieid,
     })
   },
   /**
