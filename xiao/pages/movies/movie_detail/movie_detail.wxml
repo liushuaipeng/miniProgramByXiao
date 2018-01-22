@@ -1,4 +1,4 @@
-<import src="../stars/stars-template.wxml" />
+<import src="../stars/stars_template.wxml" />
 <view class="container">
   <image class="head-img" src="{{movie.movieImg}}" mode="aspectFill" />
   <view class="head-img-hover" data-src="{{movie.movieImg}}" catchtap="viewMoviePostImg">
@@ -26,7 +26,7 @@
     </view>
     <view class="flex-row">
       <text class="mark">评分</text>
-      <template is="starsTemplate" data="{{stars:movie.stars, score:movie.score}}" />
+      <template is="starsTemplate" data="{{starts:movie.stars, average:movie.score}}" />
     </view>
     <view class="flex-row">
       <text class="mark">导演</text>
@@ -50,7 +50,7 @@
   <view class="cast">
     <text class="cast-font"> 影人</text>
     <scroll-view class="cast-imgs" scroll-x="true" style="width:100%">
-      <block wx:for="{{movie.castsInfo}}" wx:for-item="item">
+      <block wx:for="{{movie.castsInfo}}" wx:key="{{index}}" wx:for-item="item">
         <view class="cast-container">
           <image class="cast-img" src="{{item.img}}"></image>
           <text class="cast-name">{{item.name}}</text>

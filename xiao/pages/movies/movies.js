@@ -88,9 +88,8 @@ Page({
   },
   // 详情跳转
   onMovieTap: function (event) {
-    console.log(event.currentTarget.dataset.movieid)
     wx.navigateTo({
-      url: 'movie_detail/movie_detail?placeholderData=' + event.currentTarget.dataset.movieid,
+      url: 'movie_detail/movie_detail?id=' + event.currentTarget.dataset.movieid,
     })
   },
   /**
