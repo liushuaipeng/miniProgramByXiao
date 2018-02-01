@@ -79,13 +79,19 @@ Page({
       }
       movies.push(temp);
     });
-    
+
     this.setData({
       movies: movies,
       startCount: startCount
     });
     wx.hideNavigationBarLoading();
     wx.stopPullDownRefresh();
+  },
+  // 详情跳转
+  onMovieTap: function (event) {
+    wx.navigateTo({
+      url: '../movie_detail/movie_detail?id=' + event.currentTarget.dataset.movieid,
+    })
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
