@@ -1,11 +1,11 @@
 Page({
   onTap: function() {
-    wx.navigateTo({
-      url: '../post/post',
-    });
-    // wx.redirectTo({
+    // wx.navigateTo({
     //   url: '../post/post',
-    // })
+    // });
+    wx.switchTab({
+      url: '../post/post',
+    })
   },
   /**
    * 页面的初始数据
