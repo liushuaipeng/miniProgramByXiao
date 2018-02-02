@@ -1,0 +1,8 @@
+<!--pages/welcome/welcome.wxml-->
+<view class='welcome'>
+  <image class='welcome_bg' src='/images/welcome_bg.jpg'></image>
+  <text class='welcome_thank'>感谢"剑网3配装器"提供的装备数据</text>
+  <view class='welcome_open' catchtap='onOpen'>
+    <text>开启·百晓通</text>
+  </view>
+</view>

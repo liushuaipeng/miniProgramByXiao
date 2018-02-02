@@ -1,0 +1,49 @@
+<view class='equip'>
+  <view class='equip_form'>
+    <view class="equip_form_item">
+      <picker bindchange="bindPickerSchoolChange" value="{{schoolIndex}}" range="{{schoolArray}}" range-key="name">
+        <view class="equip_form_item_picker">
+          <view>
+            <text>推荐心法</text>
+          </view>
+          <view>
+            <text>{{schoolArray[schoolIndex].name}}</text>
+            <image class='equip_form_item_picker_right' src='/images/icon/cheveron-right.png'></image>
+          </view>
+        </view>
+      </picker>
+    </view>
+    <view class="equip_form_item">
+      <picker bindchange="bindPickerPositionChange" value="{{positionIndex}}" range="{{positionArray}}" range-key="name">
+        <view class="equip_form_item_picker">
+          <view>
+            <text>装备部位</text>
+          </view>
+          <view>
+            <text>{{positionArray[positionIndex].name}}</text>
+            <image class='equip_form_item_picker_right' src='/images/icon/cheveron-right.png'></image>
+          </view>
+        </view>
+      </picker>
+    </view>
+  </view>
+  <view class='equip_list'>
+    <view class='equip_list_item clearfloat'>
+      <view class="equip_list_item_img">
+        <image src='https://www.j3pz.com/icons/5134.png'></image>
+      </view>
+      <view>
+        <view class="equip_list_item_name">
+          无渊头饰
+        </view>
+        <view>
+          <text>活动</text>
+          <text>破防 无双</text>
+        </view>
+      </view>
+      <view class="equip_list_item_quality">
+        1120品
+      </view>
+    </view>
+  </view>
+</view>

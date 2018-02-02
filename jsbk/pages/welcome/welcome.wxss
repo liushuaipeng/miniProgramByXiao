@@ -1,0 +1,36 @@
+/* pages/welcome/welcome.wxss */
+
+.welcome {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.welcome_bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.welcome_thank {
+  margin-top: 160rpx;
+  color: #58f308;
+  font-size: 30rpx;
+}
+
+.welcome_open {
+  border: 1px solid #24f3f3;
+  margin-top: 400rpx;
+  width: 200rpx;
+  height: 80rpx;
+  border-radius: 5rpx;
+  text-align: center;
+}
+
+.welcome_open text {
+  font-size: 22rpx;
+  font-weight: bold;
+  line-height: 80rpx;
+  color: #24f3f3;
+}

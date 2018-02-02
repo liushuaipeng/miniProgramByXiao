@@ -1,0 +1,31 @@
+{
+  "pages": [
+    "pages/equip/equip",
+    "pages/home/home",
+    "pages/welcome/welcome"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#2aa8d9",
+    "navigationBarTitleText": "剑网3·百晓通"
+  },
+  "tabBar": {
+    "color": "#666",
+    "selectedColor": "#0fba3b",
+    "borderStyle": "#c6c6c8",
+    "backgroundColor": "#f8f8fa",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "首页",
+        "iconPath": "images/tabIcon/home (2).png",
+        "selectedIconPath": "images/tabIcon/home_active (2).png"
+      },
+      {
+        "pagePath": "pages/equip/equip",
+        "text": "装备",
+        "iconPath": "images/tabIcon/apparel (2).png",
+        "selectedIconPath": "images/tabIcon/apparel_active (2).png"
+      }
+    ]
+  }
+}
