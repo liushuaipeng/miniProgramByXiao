@@ -1,5 +1,9 @@
 var positionData = [
     {
+        id: "",
+        name: "请选择部位"
+    },
+    {
         id: "0",
         name: "帽子"
     },

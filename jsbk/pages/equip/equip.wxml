@@ -26,24 +26,46 @@
         </view>
       </picker>
     </view>
-  </view>
-  <view class='equip_list'>
-    <view class='equip_list_item clearfloat'>
-      <view class="equip_list_item_img">
-        <image src='https://www.j3pz.com/icons/5134.png'></image>
-      </view>
-      <view>
-        <view class="equip_list_item_name">
-          无渊头饰
+    <view class='equip_form_item item_slider'>
+      <view class='equip_form_item_slider'>
+        <view class="equip_form_item_slider_title">最小品质</view>
+        <view class="equip_form_item_slider_body">
+          <slider block-color="#0fba3b" value="{{equipQualityMin}}" bindchange="sliderMinChange" block-size="20" min="550" max="1400" step="5" show-value/>
         </view>
-        <view>
-          <text>活动</text>
-          <text>破防 无双</text>
-        </view>
-      </view>
-      <view class="equip_list_item_quality">
-        1120品
       </view>
     </view>
+    <view class='equip_form_item item_slider'>
+      <view class='equip_form_item_slider'>
+        <view class="equip_form_item_slider_title">最大品质</view>
+        <view class="equip_form_item_slider_body">
+          <slider block-color="#0fba3b" value="{{equipQualityMax}}" bindchange="sliderMaxChange" block-size="20" min="550" max="1400" step="5" show-value/>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='equip_list'>
+    <block wx:for="{{equipData}}" wx:key="{{id}}" wx:if="{{equipData.length > 0}}">
+      <view class='equip_list_item'>
+        <view class='equip_list_item_wrap clearfloat'>
+          <view class="equip_list_item_img">
+            <!-- <image src='/images/other.png'></image> -->
+          </view>
+          <view>
+            <view class="equip_list_item_name">{{item.name}}</view>
+            <view class='equip_list_item_source'>
+              <text>{{item.className || '未知'}}</text>
+              <text style='color: #000;'> | </text>
+              <block wx:for="{{item.filter}}" wx:for-index="filterIndex" wx:for-item="filterItem" wx:key="{{filterIndex}}">
+                <text>{{equipFilterArray[filterItem]}} </text>
+              </block>
+            </view>
+          </view>
+          <view class="equip_list_item_quality">
+            {{item.quality}}品
+          </view>
+        </view>
+      </view>
+    </block>
+    <view wx:if="{{!equipData.length > 0}}" class="equip_tip_select">* 请选择心法以及部位</view>
   </view>
 </view>

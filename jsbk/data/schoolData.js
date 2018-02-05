@@ -1,5 +1,9 @@
 var schoolData = [
     {
+        id: "",
+        name: "请选择心法"
+    },
+    {
         id: "huajian",
         name: "万花（花间游）"
     },
