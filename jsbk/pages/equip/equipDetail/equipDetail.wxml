@@ -17,15 +17,15 @@
     <view class='basicInfo' wx:for="{{basicsAttr}}" wx:key="{{index}}" wx:if="{{!!equipDetailData[item]}}">
       <text>{{equipFilter[item]}}+{{equipDetailData[item]}}</text>
     </view>
-    <view class='plusInfo'>
-      <text>外功攻击提高572</text>
+    <view class='plusInfo' wx:for="{{equipDetailData.attrArrayInfo}}" wx:key="{{index}}">
+      <text>{{item}}</text>
     </view>
     <view class='scoreInfo'>
       <text>装备：“听雷”伤害提高5%</text>
     </view>
-    <view class='xiangqian'>
+    <view class='xiangqian' wx:for="{{equipDetailData.xiangqianArr}}" wx:key="{{index}}">
       <image src='/images/equip/-1-6.jpg'></image>
-      <text>镶嵌孔：力道 + ？</text>
+      <text>镶嵌孔：{{item}} + ？</text>
     </view>
     <view class='quality'>
       <text>品质等级1100</text>
@@ -34,10 +34,10 @@
       <text>装备分数3300</text>
     </view>
     <view class='basicInfo'>
-      <text>推荐门派：天策（傲血战意）</text>
+      <text>推荐门派：{{equipDetailData.recommend}}</text>
     </view>
     <view class='basicInfo'>
-      <text>获取：任务</text>
+      <text>获取：{{equipDetailData.dropSource}}</text>
     </view>
   </view>
 </view>

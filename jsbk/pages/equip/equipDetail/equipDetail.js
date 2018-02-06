@@ -1,4 +1,4 @@
-import { schoolData, positionData, equipClass, equipFilter, checkboxFilter } from '../../../data/index';
+import { schoolData, positionData, equipClass, equipFilter, checkboxFilter, recommendAndAttr, xiangqianArray } from '../../../data/index';
 Page({
 
   /**
@@ -14,7 +14,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.getEquipDetailData()
+    this.getEquipDetailData();
   },
   // 发起请求
   getEquipDetailData() {
@@ -25,19 +25,39 @@ Page({
       method: "GET",
       success: function (res) {
         if (res.data.code == 1) {
-
           _self.progressData(res.data.data);
         }
-        console.log(_self.data.equipDetailData)
       }
     })
   },
   // 数据处理
   progressData(data) {
     var equipDetailData = data;
+    equipDetailData.attrArrayInfo = [];
     var basicsAttr = ['body', 'spirit', 'strength', 'agility', 'spunk'];
+    // 属性处理
+    var menpaixinfa = equipDetailData.menpai.toString() + equipDetailData.xinfa;
+    var attrObj = recommendAndAttr[menpaixinfa];
+    equipDetailData.recommend = attrObj.recommend;
+    ["physicsShield", "magicShield", "dodge", "parryBase", "parryValue", "toughness", "attack", "heal", "crit", "critEffect", "overcome", "acce", "hit", "strain", "huajing", "threat"].forEach(key => {
+      if (!!equipDetailData[key]) {
+        if (attrObj[key]) {
+          equipDetailData.attrArrayInfo.push(attrObj[key] + "提高" + equipDetailData[key])
+        } else {
+          equipDetailData.attrArrayInfo.push(equipFilter[key] + "等级提高" + equipDetailData[key])
+        }
+      }
+    });
+    // 镶嵌孔处理
+    equipDetailData.xiangqianArr = [];
+    for (let index = 0; index < Number(equipDetailData.xiangqian.substr(0, 1)); index++) {
+      equipDetailData.xiangqianArr.push(xiangqianArray[equipDetailData.xiangqian.substr(index * 3 + 2, 2)])
+    }
+    equipDetailData.xiangqianArr
+    // 特效处理
+    console.log(equipDetailData)
     this.setData({
-      equipDetailData: data
+      equipDetailData: equipDetailData
     });
   },
   /**

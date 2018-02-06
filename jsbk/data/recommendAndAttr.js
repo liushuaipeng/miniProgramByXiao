@@ -206,7 +206,7 @@ var recommendAndAttr = {
         hit: "外功命中等级",
         heal: ""
     },
-    "94": {
+    "97": {
         recommend: "天策(铁牢律)",
         attack: "外功攻击",
         crit: "外功会心等级",
@@ -234,7 +234,34 @@ var recommendAndAttr = {
         heal: ""
     },
     "125": {
-        recommend: "藏剑(均可)",
+        recommend: "苍云(分山劲)",
+        attack: "外功攻击",
+        crit: "外功会心等级",
+        critEffect: "外功会心效果",
+        overcome: "外功破防等级",
+        hit: "外功命中等级",
+        heal: ""
+    },
+    "133": {
+        recommend: "长歌(莫问)",
+        attack: "阴性内功攻击",
+        crit: "阴性内功会心等级",
+        critEffect: "阴性内功会心效果",
+        overcome: "阴性内功破防等级",
+        hit: "阴性内功命中等级",
+        heal: "阴性内功治疗成效"
+    },
+    "136": {
+        recommend: "长歌(相知)",
+        attack: "阴性内功攻击",
+        crit: "阴性内功会心等级",
+        critEffect: "阴性内功会心效果",
+        overcome: "阴性内功破防等级",
+        hit: "阴性内功命中等级",
+        heal: "阴性内功治疗成效"
+    },
+    "144": {
+        recommend: "霸刀",
         attack: "外功攻击",
         crit: "外功会心等级",
         critEffect: "外功会心效果",
@@ -243,3 +270,5 @@ var recommendAndAttr = {
         heal: ""
     },
 };
+
+module.exports = recommendAndAttr;

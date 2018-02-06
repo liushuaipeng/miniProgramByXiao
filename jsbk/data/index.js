@@ -3,5 +3,7 @@ module.exports = {
     positionData: require("./positionData"),
     equipClass: require("./equipClass"),
     equipFilter: require("./equipFilter"),
-    checkboxFilter: require("./checkboxFilter")
+    checkboxFilter: require("./checkboxFilter"),
+    recommendAndAttr: require("./recommendAndAttr"),
+    xiangqianArray: require("./xiangqianArray")
 };
