@@ -40,7 +40,7 @@ var schoolData = [
         name: "七秀（冰心诀）"
     },
     {
-        id: "yunshang",
+        id: "yunchang",
         name: "七秀（云裳心经）"
     },
     {
@@ -72,12 +72,8 @@ var schoolData = [
         name: "丐帮（笑尘决）"
     },
     {
-        id: "wenshui",
-        name: "藏剑（问水诀）"
-    },
-    {
-        id: "shanju",
-        name: "藏剑（山居剑意）"
+        id: "cangjian",
+        name: "藏剑（均可）"
     },
     {
         id: "fenshan",
