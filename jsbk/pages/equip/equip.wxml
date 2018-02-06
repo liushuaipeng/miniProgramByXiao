@@ -53,7 +53,7 @@
   </view>
   <view class='equip_list'>
     <block wx:for="{{equipData}}" wx:key="{{id}}" wx:if="{{equipData.length > 0}}">
-      <view class='equip_list_item'>
+      <view class='equip_list_item' catchtap='onEquipDetail' data-id="{{item.id}}">
         <view class='equip_list_item_wrap clearfloat'>
           <view class="equip_list_item_img">
             <!-- <image src='/images/other.png'></image> -->

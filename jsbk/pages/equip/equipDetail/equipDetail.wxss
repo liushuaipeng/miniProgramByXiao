@@ -1,0 +1,58 @@
+.equip_detail {
+  padding: 20rpx;
+  background: #e6e6e6;
+}
+
+.equip_detail .equip_detail_wrapper text {
+  letter-spacing: 1px;
+  line-height: 42rpx;
+  font-size: 30rpx;
+}
+
+.equip_detail_wrapper {
+  width: 100%;
+  padding: 15rpx;
+  background: #132221;
+}
+
+.equip_detail_wrapper .name {
+  display: flex;
+  justify-content: space-between;
+}
+
+.equip_detail_wrapper .name text:first-child {
+  font-size: 32rpx;
+  color: #f12cf1;
+}
+
+.equip_detail_wrapper .name text:last-child {
+  font-size: 31rpx;
+  color: #8fbc8f;
+}
+
+.equip_detail_wrapper .basicInfo text {
+  color: #f2f2f2;
+}
+
+.equip_detail_wrapper .plusInfo text {
+  color: #00c848;
+}
+
+.equip_detail_wrapper .scoreInfo text {
+  color: #ff8000;
+}
+
+.equip_detail_wrapper .xiangqian image {
+  width: 32rpx;
+  height: 32rpx;
+  margin: 0 10rpx 0 5rpx;
+  vertical-align: middle;
+}
+
+.equip_detail_wrapper .xiangqian text {
+  color: #9b9b9b;
+}
+
+.equip_detail_wrapper .quality text {
+  color: #ff0;
+}

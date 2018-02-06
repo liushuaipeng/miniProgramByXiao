@@ -89,18 +89,25 @@ Page({
       equipTipSelect: '暂无数据'
     })
   }, 600),
+  // 装备详情跳转
+  onEquipDetail:function(e){
+    console.log(e)
+  },
+  // 心法下拉菜单
   bindPickerSchoolChange: function (e) {
     this.setData({
       schoolIndex: e.detail.value
     });
     this.beforeRequest();
   },
+  // 部位下拉菜单
   bindPickerPositionChange: function (e) {
     this.setData({
       positionIndex: e.detail.value
     });
     this.beforeRequest();
   },
+  // 最小品质
   sliderMinChange: function (e) {
     var value = e.detail.value
     if (value > this.data.equipQualityMax) {
@@ -111,6 +118,7 @@ Page({
     });
     this.filterEquipData();
   },
+  // 最大品质
   sliderMaxChange: function (e) {
     var value = e.detail.value;
     if (value < this.data.equipQualityMin) {
@@ -121,6 +129,7 @@ Page({
     });
     this.filterEquipData();
   },
+  // 属性多选框
   checkboxChange: function (e) {
     this.setData({
       equipChecked: e.detail.value

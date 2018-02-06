@@ -1,0 +1,43 @@
+<view class='equip_detail'>
+  <text>25674</text>
+  <view class='equip_detail_wrapper'>
+    <view class='name'>
+      <text>{{equipDetailData.name}}</text>
+      <text>精炼等级：8/8</text>
+    </view>
+    <view class='basicInfo'>
+      <text>近身武器</text>
+    </view>
+    <view class='basicInfo' wx:if="{{!!equipDetailData.basicPhysicsShield}}">
+      <text>外功防御等级提高{{equipDetailData.basicPhysicsShield}}</text>
+    </view>
+    <view class='basicInfo' wx:if="{{!!equipDetailData.basicMagicShield}}">
+      <text>内功防御等级提高{{equipDetailData.basicMagicShield}}</text>
+    </view>
+    <view class='basicInfo' wx:for="{{basicsAttr}}" wx:key="{{index}}" wx:if="{{!!equipDetailData[item]}}">
+      <text>{{equipFilter[item]}}+{{equipDetailData[item]}}</text>
+    </view>
+    <view class='plusInfo'>
+      <text>外功攻击提高572</text>
+    </view>
+    <view class='scoreInfo'>
+      <text>装备：“听雷”伤害提高5%</text>
+    </view>
+    <view class='xiangqian'>
+      <image src='/images/equip/-1-6.jpg'></image>
+      <text>镶嵌孔：力道 + ？</text>
+    </view>
+    <view class='quality'>
+      <text>品质等级1100</text>
+    </view>
+    <view class='scoreInfo'>
+      <text>装备分数3300</text>
+    </view>
+    <view class='basicInfo'>
+      <text>推荐门派：天策（傲血战意）</text>
+    </view>
+    <view class='basicInfo'>
+      <text>获取：任务</text>
+    </view>
+  </view>
+</view>
