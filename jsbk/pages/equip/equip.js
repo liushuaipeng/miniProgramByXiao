@@ -1,9 +1,9 @@
-import { schoolData, positionData, equipClass, equipFilter } from '../../data/index';
+import { schoolData, positionData, equipClass, equipFilter, checkboxFilter } from '../../data/index';
 import { throttle } from '../../npm/index';
 var selfForEquipPage;
-var equipFilterArray = ["会心", "破防", "加速", "命中", "无双", "化劲", "治疗", "外防", "内防", "闪避", "招架", "拆招", "御劲"];
 Page({
   data: {
+    equipTipSelect: "* 请选择心法以及部位",
     schoolArray: [],
     positionArray: [],
     schoolIndex: 0,
@@ -11,15 +11,17 @@ Page({
     equipData: [],
     equipQualityMin: 1150,
     equipQualityMax: 1400,
-    resetEquipData: []
+    resetEquipData: [],
+    equipChecked: []
   },
   onLoad: function () {
     this.setData({
       schoolArray: schoolData,
       positionArray: positionData,
-      equipFilterArray: equipFilter
+      equipFilterArray: equipFilter,
+      checkboxFilterArray: checkboxFilter
     });
-    // this.getEquipData();
+    selfForEquipPage = this;
   },
   // 发起请求前处理
   beforeRequest: function () {
@@ -30,8 +32,11 @@ Page({
     if (!selfData.schoolArray[selfData.schoolIndex].id) {
       return;
     };
-    selfForEquipPage = this;
     this.getEquipData();
+    this.setData({
+      equipTipSelect: "加载中...",
+      equipData: []
+    })
   },
   // 发起请求
   getEquipData: throttle(function () {
@@ -43,7 +48,7 @@ Page({
         _self.processEquipData(res.data.data.list);
       }
     })
-  }, 1000),
+  }, 400),
   // 数据处理
   processEquipData: function (list) {
     var equipData = list;
@@ -61,12 +66,27 @@ Page({
     var resetArr = selfForEquipPage.data.resetEquipData;
     var newArr = [];
     resetArr.forEach(item => {
-      if (item.quality <= selfData.equipQualityMax && item.quality >= selfData.equipQualityMin) {
-        newArr.push(item);
+      if (item.quality > selfData.equipQualityMax) {
+        return;
       }
+      if (item.quality < selfData.equipQualityMin) {
+        return;
+      }
+      var flag = true;
+      selfData.equipChecked.forEach(checkItem => {
+        if (item.filter.indexOf(checkItem) < 0) {
+          flag = false;
+        }
+      });
+      if (!flag) {
+        return;
+      }
+      newArr.push(item);
+
     });
     selfForEquipPage.setData({
-      equipData: newArr
+      equipData: newArr,
+      equipTipSelect: '暂无数据'
     })
   }, 600),
   bindPickerSchoolChange: function (e) {
@@ -89,7 +109,6 @@ Page({
     this.setData({
       equipQualityMin: value
     });
-    selfForEquipPage = this;
     this.filterEquipData();
   },
   sliderMaxChange: function (e) {
@@ -100,7 +119,12 @@ Page({
     this.setData({
       equipQualityMax: value
     });
-    selfForEquipPage = this;
+    this.filterEquipData();
+  },
+  checkboxChange: function (e) {
+    this.setData({
+      equipChecked: e.detail.value
+    });
     this.filterEquipData();
   }
 })

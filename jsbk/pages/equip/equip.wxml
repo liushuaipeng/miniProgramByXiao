@@ -42,6 +42,14 @@
         </view>
       </view>
     </view>
+    <view class='equip_form_item item_check'>
+      <checkbox-group bindchange="checkboxChange">
+        <label class="checkbox" wx:for="{{checkboxFilterArray}}" wx:key="{{id}}">
+          <checkbox value="{{item.id}}" checked="{{item.checked}}" />
+          <text>{{item.name}}</text>
+        </label>
+      </checkbox-group>
+    </view>
   </view>
   <view class='equip_list'>
     <block wx:for="{{equipData}}" wx:key="{{id}}" wx:if="{{equipData.length > 0}}">
@@ -66,6 +74,6 @@
         </view>
       </view>
     </block>
-    <view wx:if="{{!equipData.length > 0}}" class="equip_tip_select">* 请选择心法以及部位</view>
+    <view wx:if="{{!equipData.length > 0}}" class="equip_tip_select">{{equipTipSelect}}</view>
   </view>
 </view>

@@ -60,7 +60,19 @@
 .equip_form_item_slider_body {
   flex: 1;
 }
-
+.equip_form_item.item_check {
+  padding-bottom: 5rpx;
+}
+.equip_form_item.item_check label {
+  display: inline-block;
+  width: 25%;
+  overflow: hidden;
+  margin-bottom: 15rpx;
+}
+.equip_form_item.item_check label text {
+  color: #333;
+  font-size: 26rpx;
+}
 .equip_list {
   margin-top: 50rpx;
   background: #fff;

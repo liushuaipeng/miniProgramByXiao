@@ -24,6 +24,10 @@ var positionData = [
         name: "下装"
     },
     {
+        id: "5",
+        name: "鞋子"
+    },
+    {
         id: "6",
         name: "项链"
     },
