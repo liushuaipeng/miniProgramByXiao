@@ -1,6 +1,9 @@
 .equip_detail {
+  min-height: calc(100% - 40rpx);
   padding: 20rpx;
   background: #e6e6e6;
+  display: flex;
+  align-items: center;
 }
 
 .equip_detail .equip_detail_wrapper text {
@@ -12,6 +15,7 @@
 .equip_detail_wrapper {
   padding: 15rpx;
   background: #132221;
+  flex: 1;
 }
 
 .equip_detail_wrapper .name {

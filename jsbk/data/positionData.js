@@ -33,7 +33,7 @@ var positionData = [
     },
     {
         id: "7",
-        name: "帽子"
+        name: "腰坠"
     },
     {
         id: "8",

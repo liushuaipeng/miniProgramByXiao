@@ -1,9 +1,8 @@
 <view class='equip_detail'>
-  <text>25674</text>
-  <view class='equip_detail_wrapper'>
+  <view class='equip_detail_wrapper' wx:if="{{equipDetailWrapShow}}">
     <view class='name'>
       <text>{{equipDetailData.name}}</text>
-      <text>精炼等级：8/8</text>
+      <text>精炼等级：0/{{equipDetailData.strengthen}}</text>
     </view>
     <view class='basicInfo'>
       <text>近身武器</text>
@@ -20,18 +19,35 @@
     <view class='plusInfo' wx:for="{{equipDetailData.attrArrayInfo}}" wx:key="{{index}}">
       <text>{{item}}</text>
     </view>
-    <view class='scoreInfo'>
-      <text>装备：“听雷”伤害提高5%</text>
-    </view>
     <view class='xiangqian' wx:for="{{equipDetailData.xiangqianArr}}" wx:key="{{index}}">
       <image src='/images/equip/-1-6.jpg'></image>
-      <text>镶嵌孔：{{item}} + ？</text>
+      <text>镶嵌孔：{{item}}</text>
     </view>
+    <view class='scoreInfo' wx:if="{{equipDetailData.texiao && equipDetailData.texiao.type == 'Common'}}" wx:for="{{equipDetailData.texiao.desc}}" wx:key="{{index}}">
+      <text>{{item}}</text>
+    </view>
+    <view class='plusInfo' wx:if="{{equipDetailData.texiao && equipDetailData.texiao.type == 'Useable'}}" wx:for="{{equipDetailData.texiao.desc}}" wx:key="{{index}}">
+      <text>{{item}}</text>
+    </view>
+    <view wx:if="{{equipDetailData.texiao && equipDetailData.texiao.type == 'Collection'}}">
+      <view class='quality'>
+        <text>{{equipDetailData.texiao.name}}(1/{{equipDetailData.texiao.components.length}})</text>
+      </view>
+      <view wx:for="{{equipDetailData.texiao.components}}" wx:key="{{index}}" class="{{item.equipName == equipDetailData.name?'quality':'xiangqian'}}">
+        <text>{{item.equipName}}</text>
+      </view>
+      <view style='margin-top: 20rpx;'>
+        <view wx:for="{{equipDetailData.texiao.effects}}" wx:key="{{index}}" class="xiangqian">
+          <text>[{{item.conditionNum}}] {{item.desc}}</text>
+        </view>
+      </view>
+    </view>
+
     <view class='quality'>
-      <text>品质等级1100</text>
+      <text>品质等级{{equipDetailData.quality}}</text>
     </view>
     <view class='scoreInfo'>
-      <text>装备分数3300</text>
+      <text>装备分数{{equipDetailData.score}}</text>
     </view>
     <view class='basicInfo'>
       <text>推荐门派：{{equipDetailData.recommend}}</text>

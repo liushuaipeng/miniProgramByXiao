@@ -90,8 +90,10 @@ Page({
     })
   }, 600),
   // 装备详情跳转
-  onEquipDetail:function(e){
-    console.log(e)
+  onEquipDetail: function (e) {
+    wx.navigateTo({
+      url: 'equipDetail/equipDetail?equipId=' + e.currentTarget.dataset.id,
+    })
   },
   // 心法下拉菜单
   bindPickerSchoolChange: function (e) {

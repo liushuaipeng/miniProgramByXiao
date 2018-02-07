@@ -12,11 +12,15 @@
   height: 100%;
   z-index: -1;
 }
-
-.welcome_thank {
-  margin-top: 160rpx;
+.title {
   color: #58f308;
-  font-size: 30rpx;
+  font-size: 34rpx;
+  margin-top: 160rpx;
+}
+.welcome_thank {
+  margin-top: 20rpx;
+  color: #ccc;
+  font-size: 28rpx;
 }
 
 .welcome_open {

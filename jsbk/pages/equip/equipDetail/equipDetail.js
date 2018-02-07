@@ -6,6 +6,7 @@ Page({
    */
   data: {
     equipDetailData: {},
+    equipDetailWrapShow: false,
     equipFilter: equipFilter,
     basicsAttr: ['body', 'spirit', 'strength', 'agility', 'spunk']
   },
@@ -14,14 +15,17 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.getEquipDetailData();
+    var equipId = options.equipId;
+    this.getEquipDetailData(equipId);
   },
   // 发起请求
-  getEquipDetailData() {
+  getEquipDetailData(equipId) {
     var _self = this;
-    var id = 25674;
+    wx.showLoading({
+      title: '加载中',
+    })
     wx.request({
-      url: "https://cgz2ufde.qcloud.la/jw3zb/detail/" + id,
+      url: "https://cgz2ufde.qcloud.la/jw3zb/detail/" + equipId,
       method: "GET",
       success: function (res) {
         if (res.data.code == 1) {
@@ -54,11 +58,11 @@ Page({
       equipDetailData.xiangqianArr.push(xiangqianArray[equipDetailData.xiangqian.substr(index * 3 + 2, 2)])
     }
     equipDetailData.xiangqianArr
-    // 特效处理
-    console.log(equipDetailData)
     this.setData({
-      equipDetailData: equipDetailData
+      equipDetailData: equipDetailData,
+      equipDetailWrapShow: true
     });
+    wx.hideLoading();
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

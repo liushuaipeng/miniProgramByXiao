@@ -1,9 +1,10 @@
 {
   "pages": [
-    "pages/equip/equipDetail/equipDetail",
+    "pages/welcome/welcome",
     "pages/equip/equip",
+    "pages/equip/equipDetail/equipDetail",
     "pages/home/home",
-    "pages/welcome/welcome"
+    "pages/answer/answer"
   ],
   "window": {
     "navigationBarBackgroundColor": "#2aa8d9",

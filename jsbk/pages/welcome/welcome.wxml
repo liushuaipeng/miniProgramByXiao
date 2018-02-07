@@ -1,7 +1,8 @@
 <!--pages/welcome/welcome.wxml-->
 <view class='welcome'>
   <image class='welcome_bg' src='/images/welcome_bg.jpg'></image>
-  <text class='welcome_thank'>感谢"剑网3配装器"提供的装备数据</text>
+  <text class='title'>剑网3·百晓通 By 笑丑泪</text>
+  <text class='welcome_thank'>* 感谢"胖叔叔"提供的装备数据</text>
   <view class='welcome_open' catchtap='onOpen'>
     <text>开启·百晓通</text>
   </view>
