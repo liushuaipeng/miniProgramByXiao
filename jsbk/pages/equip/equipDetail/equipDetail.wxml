@@ -5,7 +5,7 @@
       <text>精炼等级：0/{{equipDetailData.strengthen}}</text>
     </view>
     <view class='basicInfo'>
-      <text>近身武器</text>
+      <text>{{equipType[equipDetailData.type]}}</text>
     </view>
     <view class='basicInfo' wx:if="{{!!equipDetailData.basicPhysicsShield}}">
       <text>外功防御等级提高{{equipDetailData.basicPhysicsShield}}</text>

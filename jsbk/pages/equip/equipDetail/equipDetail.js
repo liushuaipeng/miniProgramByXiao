@@ -1,4 +1,4 @@
-import { schoolData, positionData, equipClass, equipFilter, checkboxFilter, recommendAndAttr, xiangqianArray } from '../../../data/index';
+import { schoolData, positionData, equipClass, equipFilter, checkboxFilter, recommendAndAttr, xiangqianArray, equipType } from '../../../data/index';
 Page({
 
   /**
@@ -6,6 +6,7 @@ Page({
    */
   data: {
     equipDetailData: {},
+    equipType: equipType,
     equipDetailWrapShow: false,
     equipFilter: equipFilter,
     basicsAttr: ['body', 'spirit', 'strength', 'agility', 'spunk']

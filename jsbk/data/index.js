@@ -5,5 +5,6 @@ module.exports = {
     equipFilter: require("./equipFilter"),
     checkboxFilter: require("./checkboxFilter"),
     recommendAndAttr: require("./recommendAndAttr"),
-    xiangqianArray: require("./xiangqianArray")
+    xiangqianArray: require("./xiangqianArray"),
+    equipType: require("./equipType")
 };
