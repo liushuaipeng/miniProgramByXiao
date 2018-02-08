@@ -1,10 +1,10 @@
 {
   "pages": [
+    "pages/answer/answer",
     "pages/welcome/welcome",
     "pages/equip/equip",
     "pages/equip/equipDetail/equipDetail",
-    "pages/home/home",
-    "pages/answer/answer"
+    "pages/home/home"
   ],
   "window": {
     "navigationBarBackgroundColor": "#2aa8d9",
@@ -27,6 +27,12 @@
         "text": "装备",
         "iconPath": "images/tabIcon/apparel (2).png",
         "selectedIconPath": "images/tabIcon/apparel_active (2).png"
+      },
+      {
+        "pagePath": "pages/answer/answer",
+        "text": "科举",
+        "iconPath": "images/tabIcon/book-reference.png",
+        "selectedIconPath": "images/tabIcon/book-reference_active.png"
       }
     ]
   }

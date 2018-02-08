@@ -10,7 +10,7 @@ var equipType = {
     9: "帽子",
     8: "上衣",
     10: "腰带",
-    11: "近程武器",
+    11: "近身武器",
     12: "重兵武器"
 };
 module.exports = equipType;

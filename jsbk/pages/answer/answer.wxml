@@ -1,2 +1,24 @@
 <!--pages/answer/answer.wxml-->
-<text>pages/answer/answer.wxml</text>
+<view class='answer'>
+  <view class='answer_search'>
+    <view class='answer_search_wrap'>
+      <icon type="search" size="13" color='#666' />
+      <input class='answer_search_input' confirm-type="search" placeholder='请输入关键字' value='' bindinput="onAnswerSearch"></input>
+    </view>
+  </view>
+  <view class='answer_data'>
+    <view class='answer_data_list' wx:if="{{!answerTipShow}}">
+      <view class='answer_data_item' wx:for="{{answerList}}" wx:key="{{index}}">
+        <view class='answer_data_item_q'>
+          <text class='wordHighlightBefore'>{{item.wordHighlightBefore}}</text>
+          <text class='wordHighlight'>{{item.wordHighlight}}</text>
+          <text class='wordHighlightAfter'>{{item.wordHighlightAfter}}</text>
+        </view>
+        <view class='answer_data_item_a'>
+          <text>{{item.answer}}</text>
+        </view>
+      </view>
+    </view>
+    <view wx:if="{{answerTipShow}}" class='answerTipShow'>{{answerTip}}</view>
+  </view>
+</view>

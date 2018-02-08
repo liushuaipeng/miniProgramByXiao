@@ -6,5 +6,6 @@ module.exports = {
     checkboxFilter: require("./checkboxFilter"),
     recommendAndAttr: require("./recommendAndAttr"),
     xiangqianArray: require("./xiangqianArray"),
-    equipType: require("./equipType")
+    equipType: require("./equipType"),
+    answerData: require("./answerData")
 };
