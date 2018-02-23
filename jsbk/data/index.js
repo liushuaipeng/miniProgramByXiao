@@ -1,4 +1,5 @@
 module.exports = {
+    config: require("./config"),
     schoolData: require("./schoolData"),
     positionData: require("./positionData"),
     equipClass: require("./equipClass"),

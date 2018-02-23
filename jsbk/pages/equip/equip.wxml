@@ -56,7 +56,7 @@
       <view class='equip_list_item' catchtap='onEquipDetail' data-id="{{item.id}}">
         <view class='equip_list_item_wrap clearfloat'>
           <view class="equip_list_item_img">
-             <image src='https://www.j3pz.com/icons/{{item.icon}}.png'></image> 
+            <image src='https://www.j3pz.com/icons/{{item.icon}}.png'></image>
           </view>
           <view>
             <view class="equip_list_item_name">{{item.name}}</view>

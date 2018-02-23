@@ -1,10 +1,11 @@
 {
   "pages": [
-    "pages/answer/answer",
     "pages/welcome/welcome",
+    "pages/my/my",
+    "pages/home/home",
+    "pages/answer/answer",
     "pages/equip/equip",
-    "pages/equip/equipDetail/equipDetail",
-    "pages/home/home"
+    "pages/equip/equipDetail/equipDetail"
   ],
   "window": {
     "navigationBarBackgroundColor": "#2aa8d9",
@@ -17,12 +18,6 @@
     "backgroundColor": "#f8f8fa",
     "list": [
       {
-        "pagePath": "pages/home/home",
-        "text": "首页",
-        "iconPath": "images/tabIcon/home (2).png",
-        "selectedIconPath": "images/tabIcon/home_active (2).png"
-      },
-      {
         "pagePath": "pages/equip/equip",
         "text": "装备",
         "iconPath": "images/tabIcon/apparel (2).png",
@@ -31,8 +26,14 @@
       {
         "pagePath": "pages/answer/answer",
         "text": "科举",
-        "iconPath": "images/tabIcon/book-reference.png",
-        "selectedIconPath": "images/tabIcon/book-reference_active.png"
+        "iconPath": "images/tabIcon/book-reference (2).png",
+        "selectedIconPath": "images/tabIcon/book-reference_active (2).png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "iconPath": "images/tabIcon/user (2).png",
+        "selectedIconPath": "images/tabIcon/user_active (2).png"
       }
     ]
   }

@@ -1,4 +1,4 @@
-import { schoolData, positionData, equipClass, equipFilter, checkboxFilter } from '../../data/index';
+import { config, schoolData, positionData, equipClass, equipFilter, checkboxFilter } from '../../data/index';
 import { throttle } from '../../npm/index';
 var selfForEquipPage;
 Page({
@@ -42,7 +42,7 @@ Page({
   getEquipData: throttle(function () {
     var _self = selfForEquipPage;
     wx.request({
-      url: "https://cgz2ufde.qcloud.la/jw3zb/list/?position=" + _self.data.positionArray[_self.data.positionIndex].id + "&school=" + _self.data.schoolArray[_self.data.schoolIndex].id + "",
+      url: config.domain + "/jw3zb/list/?position=" + _self.data.positionArray[_self.data.positionIndex].id + "&school=" + _self.data.schoolArray[_self.data.schoolIndex].id + "",
       method: "GET",
       success: function (res) {
         _self.processEquipData(res.data.data.list);

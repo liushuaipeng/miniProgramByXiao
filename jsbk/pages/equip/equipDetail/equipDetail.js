@@ -1,4 +1,4 @@
-import { schoolData, positionData, equipClass, equipFilter, checkboxFilter, recommendAndAttr, xiangqianArray, equipType } from '../../../data/index';
+import { config, schoolData, positionData, equipClass, equipFilter, checkboxFilter, recommendAndAttr, xiangqianArray, equipType } from '../../../data/index';
 Page({
 
   /**
@@ -26,7 +26,7 @@ Page({
       title: '加载中',
     })
     wx.request({
-      url: "https://cgz2ufde.qcloud.la/jw3zb/detail/" + equipId,
+      url: config.domain + "/jw3zb/detail/" + equipId,
       method: "GET",
       success: function (res) {
         if (res.data.code == 1) {
