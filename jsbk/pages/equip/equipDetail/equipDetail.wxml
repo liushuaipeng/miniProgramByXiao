@@ -19,13 +19,14 @@
     <view class='plusInfo' wx:for="{{equipDetailData.attrArrayInfo}}" wx:key="{{index}}">
       <text>{{item}}</text>
     </view>
+    <view class='scoreInfo' wx:if="{{equipDetailData.texiao && equipDetailData.texiao.type == 'Common'}}" wx:for="{{equipDetailData.texiao.desc}}" wx:key="{{index}}">
+      <text>{{item}}</text>
+    </view>
     <view class='xiangqian' wx:for="{{equipDetailData.xiangqianArr}}" wx:key="{{index}}">
       <image src='/images/equip/-1-6.jpg'></image>
       <text>镶嵌孔：{{item}}</text>
     </view>
-    <view class='scoreInfo' wx:if="{{equipDetailData.texiao && equipDetailData.texiao.type == 'Common'}}" wx:for="{{equipDetailData.texiao.desc}}" wx:key="{{index}}">
-      <text>{{item}}</text>
-    </view>
+
     <view class='plusInfo' wx:if="{{equipDetailData.texiao && equipDetailData.texiao.type == 'Useable'}}" wx:for="{{equipDetailData.texiao.desc}}" wx:key="{{index}}">
       <text>{{item}}</text>
     </view>
