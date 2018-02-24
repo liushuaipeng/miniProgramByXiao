@@ -19,7 +19,8 @@ Page({
       schoolArray: schoolData,
       positionArray: positionData,
       equipFilterArray: equipFilter,
-      checkboxFilterArray: checkboxFilter
+      checkboxFilterArray: checkboxFilter,
+      domain: config.domain
     });
     selfForEquipPage = this;
   },
