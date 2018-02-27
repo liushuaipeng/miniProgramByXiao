@@ -49,7 +49,7 @@ Page({
         _self.processEquipData(res.data.data.list);
       }
     })
-  }, 400),
+  }, 1),
   // 数据处理
   processEquipData: function (list) {
     var equipData = list;
