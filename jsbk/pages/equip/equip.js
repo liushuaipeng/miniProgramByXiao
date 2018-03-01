@@ -63,6 +63,9 @@ Page({
   },
   // 数据筛选
   filterEquipData: throttle(function () {
+    if (!selfForEquipPage.data.schoolIndex || !selfForEquipPage.data.positionIndex) {
+      return;
+    }
     var selfData = selfForEquipPage.data;
     var resetArr = selfForEquipPage.data.resetEquipData;
     var newArr = [];
@@ -137,6 +140,35 @@ Page({
     this.setData({
       equipChecked: e.detail.value
     });
+    this.filterEquipData();
+  },
+  onEquipQualityChange: function (e) {
+    var number = Number(e.detail.value);
+    if (number > 1400) {
+      return 1400;
+    };
+    if (number < 0) {
+      return 0;
+    };
+  },
+  onEquipMinBlur: function (e) {
+    var number = Number(e.detail.value);
+    if (number > this.data.equipQualityMax) {
+      number = this.data.equipQualityMax;
+    };
+    this.setData({
+      equipQualityMin: number
+    })
+    this.filterEquipData();
+  },
+  onEquipMaxBlur: function (e) {
+    var number = Number(e.detail.value);
+    if (number < this.data.equipQualityMin) {
+      number = this.data.equipQualityMin;
+    };
+    this.setData({
+      equipQualityMax: number
+    })
     this.filterEquipData();
   }
 })

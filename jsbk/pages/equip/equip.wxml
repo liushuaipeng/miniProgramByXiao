@@ -30,16 +30,18 @@
       <view class='equip_form_item_slider'>
         <view class="equip_form_item_slider_title">最小品质</view>
         <view class="equip_form_item_slider_body">
-          <slider block-color="#0fba3b" value="{{equipQualityMin}}" bindchange="sliderMinChange" block-size="20" min="550" max="1400" step="5" show-value/>
+          <slider block-color="#0fba3b" value="{{equipQualityMin}}" bindchange="sliderMinChange" block-size="20" min="550" max="1400" step="5" />
         </view>
+        <input class='equip_form_item_slider_input' bindinput="onEquipQualityChange" type='number' value='{{equipQualityMin}}' bindblur="onEquipMinBlur"></input>
       </view>
     </view>
     <view class='equip_form_item item_slider'>
       <view class='equip_form_item_slider'>
         <view class="equip_form_item_slider_title">最大品质</view>
         <view class="equip_form_item_slider_body">
-          <slider block-color="#0fba3b" value="{{equipQualityMax}}" bindchange="sliderMaxChange" block-size="20" min="550" max="1400" step="5" show-value/>
+          <slider block-color="#0fba3b" value="{{equipQualityMax}}" bindchange="sliderMaxChange" block-size="20" min="550" max="1400" step="5" />
         </view>
+        <input class='equip_form_item_slider_input' bindinput="onEquipQualityChange" type='number' value='{{equipQualityMax}}' bindblur='onEquipMaxBlur'></input>
       </view>
     </view>
     <view class='equip_form_item item_check'>

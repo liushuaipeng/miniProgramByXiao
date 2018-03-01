@@ -56,6 +56,9 @@
   color: #333;
   font-weight: 500;
 }
+.equip_form_item_slider_input {
+  flex: 0 0 100rpx;
+}
 
 .equip_form_item_slider_body {
   flex: 1;
