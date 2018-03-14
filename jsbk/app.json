@@ -1,8 +1,9 @@
 {
   "pages": [
     "pages/welcome/welcome",
-    "pages/my/my",
     "pages/home/home",
+    "pages/home/articleDetail/articleDetail",
+    "pages/my/my",
     "pages/answer/answer",
     "pages/equip/equip",
     "pages/equip/equipDetail/equipDetail"
@@ -17,6 +18,12 @@
     "borderStyle": "#c6c6c8",
     "backgroundColor": "#f8f8fa",
     "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "官方",
+        "iconPath": "images/tabIcon/home (2).png",
+        "selectedIconPath": "images/tabIcon/home_active (2).png"
+      },
       {
         "pagePath": "pages/equip/equip",
         "text": "装备",

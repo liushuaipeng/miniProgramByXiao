@@ -1,0 +1,16 @@
+<template name="articleItemTemplate">
+  <view class='home_article_item'>
+    <view class='home_article' catchtap='jumpArticleDetail' data-link="{{link}}">
+      <view class='home_article_content'>
+        <view class='home_article_content_title'>
+          <text>{{title}}</text>
+        </view>
+        <view>
+          <text class='home_article_content_author'>{{author}}</text>
+          <text class='home_article_content_date'>{{date}}</text>
+        </view>
+      </view>
+      <image mode="aspectFill" src='/images/logo.png'></image>
+    </view>
+  </view>
+</template>

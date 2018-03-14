@@ -1,0 +1,29 @@
+/* pages/home/articleDetail/articleDetail.wxss */
+
+.articleDetail {
+  padding: 10px;
+}
+
+.articleDetail_title {
+  padding: 15px 0 10px;
+  color: #000;
+  font-size: 38rpx;
+  font-weight: 600;
+  text-align: center;
+}
+
+.articleDetail_time {
+  padding-bottom: 7px;
+  text-align: right;
+  color: #b6b6b6;
+  font-size: 12px;
+  border-bottom: #ccc solid 1px;
+}
+
+.articleDetail_content {
+  color: #555;
+}
+
+.articleDetail_content .wxParse-p {
+  margin: 20px 0;
+}

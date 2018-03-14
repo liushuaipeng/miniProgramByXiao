@@ -16,6 +16,7 @@ const router = require("./routes");
 app.use(router.routes());
 const jw3zbRouter = require("./routes/jw3zb.js");
 app.use(jw3zbRouter.routes());
-
+const jw3homeRouter = require("./routes/jw3home.js");
+app.use(jw3homeRouter.routes());
 // 启动程序，监听端口
 app.listen(config.port, () => debug(`listening on port ${config.port}`));

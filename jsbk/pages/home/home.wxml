@@ -1,1 +1,47 @@
-<text>意见、建议请联系扣扣：827670122</text>
+<import src="article_item/article_item_template.wxml" />
+
+<view class='home'>
+  <view class='home_nav'>
+    <view catchtap='onNavTap' data-info="allnews" class='{{currentId == "allnews"?"active":""}}'>
+      <text>最新</text>
+    </view>
+    <view catchtap='onNavTap' data-info="press" class='{{currentId == "press"?"active":""}}'>
+      <text>新闻</text>
+    </view>
+    <view catchtap='onNavTap' data-info="announce" class='{{currentId == "announce"?"active":""}}'>
+      <text>公告</text>
+    </view>
+  </view>
+</view>
+
+<swiper class='home_swiper' duration="200" bindchange="onSwiperBindchange" current-item-id="{{currentId}}">
+  <swiper-item item-id="allnews">
+    <scroll-view scroll-y="true" scroll-top="{{allnewsScrollPosition}}" scroll-with-animation="true">
+      <view class='home_article_refresh' wx:if="{{homeArticleRefresh}}">刷新中...</view>
+      <block wx:for="{{allnewsList}}" wx:key="index">
+        <template is="articleItemTemplate" data="{{...item}}" />
+      </block>
+    </scroll-view>
+  </swiper-item>
+  <swiper-item item-id="press">
+    <scroll-view scroll-y="true" scroll-top="{{pressScrollPosition}}" scroll-with-animation="true" bindscrolltolower="onScrollTolower" data-id="press">
+      <view class='home_article_refresh' wx:if="{{homeArticleRefresh}}">刷新中...</view>
+      <block wx:for="{{pressList}}" wx:key="index">
+        <template is="articleItemTemplate" data="{{...item}}" />
+      </block>
+      <view class='home_article_loading'>加载中...</view>
+    </scroll-view>
+  </swiper-item>
+  <swiper-item item-id="announce">
+    <scroll-view scroll-y="true" scroll-top="{{announceScrollPosition}}" scroll-with-animation="true" bindscrolltolower="onScrollTolower" data-id="announce">
+      <view class='home_article_refresh' wx:if="{{homeArticleRefresh}}">刷新中...</view>
+      <block wx:for="{{announceList}}" wx:key="index">
+        <template is="articleItemTemplate" data="{{...item}}" />
+      </block>
+      <view class='home_article_loading'>加载中...</view>
+    </scroll-view>
+  </swiper-item>
+</swiper>
+<view class='home_refresh' catchtap='homeRefresh'>
+  <image class='{{refreshAnimation?"running":"paused"}}' src='/images/icon/refresh.png'></image>
+</view>

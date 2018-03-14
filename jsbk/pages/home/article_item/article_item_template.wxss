@@ -1,0 +1,41 @@
+.home_article_item {
+  padding: 0 30rpx;
+}
+
+
+.home_article {
+  padding: 25rpx 0;
+  display: flex;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.home_article image {
+  flex: 0 0 200rpx;
+  width: 200rpx;
+  height: 130rpx;
+}
+
+.home_article_content {
+  flex: 1;
+  padding-right: 30rpx;
+}
+
+.home_article_content_title {
+  line-height: 40rpx;
+}
+
+.home_article_content_title text {
+  font-size: 28rpx;
+  color: #131313;
+  font-weight: 500;
+  line-height: 30rpx;
+}
+
+.home_article_content_date {
+  margin-left: 30rpx;
+  color: #8f8f8f;
+}
+
+.home_article_content_auther {
+  color: #8f8f8f;
+}

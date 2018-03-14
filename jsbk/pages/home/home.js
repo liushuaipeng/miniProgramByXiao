@@ -1,65 +1,97 @@
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-    
+    currentId: 'allnews',
+    refreshAnimation: false,
+    allnewsList: [],
+    pressList: [],
+    announceList: [],
+    allnewsScrollPosition: 0,
+    pressScrollPosition: 0,
+    announceScrollPosition: 0,
+    pressPage: 1,
+    announcePage: 1,
+    homeArticleRefresh: false
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-    
+  onLoad: function (e) {
+    this.getHomeData('allnews');
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-    
+  // 点击详情跳转
+  jumpArticleDetail(e) {
+    var link = e.currentTarget.dataset.link;
+    var id = null;
+    if (link.indexOf('id=') >= 0) {
+      id = link.substr(link.indexOf('id=') + 3);
+      link = link.substr(0, link.indexOf('?'))
+    }
+    wx.navigateTo({
+      url: 'articleDetail/articleDetail?link=' + link + '&id=' + id
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-    
+  onNavTap: function (e) {
+    this.setData({
+      currentId: e.currentTarget.dataset.info
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-    
+  onSwiperBindchange: function (e) {
+    var currentItemId = e.detail.currentItemId;
+    if (!this.data[currentItemId + "List"].length) {
+      this.getHomeData(currentItemId);
+    }
+    if (!!e.detail.source) {
+      this.setData({
+        currentId: currentItemId
+      })
+    }
   },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-    
+  // 发起请求
+  getHomeData(key, category) {
+    this.setData({
+      refreshAnimation: true
+    })
+    var _self = this;
+    var url = 'https://998629976.liushuaipeng.cn/jw3home/article/list/' + key;
+    if (key != 'allnews' && category == 'loading') {
+      url = url + '?page=' + (_self.data[key + 'Page'] + 1)
+    };
+    wx.request({
+      url: url,
+      success: function (res) {
+        var list;
+        var data = {
+          homeArticleRefresh: false,
+          refreshAnimation: false
+        };
+        if (category == 'loading') {
+          list = _self.data[key + 'List'];
+          data[key + 'Page'] = _self.data[key + 'Page'] + 1;
+        } else {
+          list = [];
+          data[key + 'Page'] = 1;
+        }
+        res.data.data.list.forEach((item) => {
+          list.push(item);
+        })
+        data[key + 'List'] = list
+        _self.setData(data);
+      }
+    })
   },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-    
+  onScrollTolower: function (e) {
+    if (this.data.refreshAnimation) {
+      return;
+    }
+    this.getHomeData(e.target.dataset.id, 'loading');
   },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-    
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-    
+  homeRefresh: function (e) {
+    if (this.data.refreshAnimation) {
+      return
+    };
+    var key = this.data.currentId;
+    var data = {
+      homeArticleRefresh: true,
+    };
+    data[key + 'ScrollPosition'] = 0;
+    this.setData(data);
+    this.getHomeData(key);
   }
 })
